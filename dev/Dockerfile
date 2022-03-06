@@ -5,7 +5,7 @@ ENV GOOS linux
 ENV GOARCH amd64
 ENV CGO_ENABLED 0
 
-RUN go get -d -u https://github.com/ZuluSpl0it/Sia && \
+RUN go get -d -u https://github.com/ZuluSpl0it/Sia/... && \
     cd $GOPATH/src/github.com/ZuluSpl0it/Sia && \
     make dev
 
