@@ -1,13 +1,17 @@
 FROM golang AS builder
-LABEL maintainer="Michael Lynch <michael@mtlynch.io>"
+LABEL maintainer="ZuluSpl0it>"
 
 ENV GOOS linux
 ENV GOARCH amd64
 ENV CGO_ENABLED 0
 
-RUN go get -d -u gitlab.com/NebulousLabs/Sia/... && \
-    cd $GOPATH/src/gitlab.com/NebulousLabs/Sia && \
-    make release
+RUN go get -d -u https://github.com/ZuluSpl0it/Sia && \
+    cd $GOPATH/src/github.com/ZuluSpl0it/Sia && \
+    make dev
+
+#RUN go get -d -u gitlab.com/NebulousLabs/Sia/... && \
+#    cd $GOPATH/src/gitlab.com/NebulousLabs/Sia && \
+#    make release
 
 FROM alpine
 LABEL maintainer="Michael Lynch <michael@mtlynch.io>"
