@@ -5,8 +5,8 @@ ENV GOOS linux
 ENV GOARCH amd64
 ENV CGO_ENABLED 0
 
-RUN go get -d -u https://github.com/ZuluSpl0it/Sia/... && \
-    cd $GOPATH/src/github.com/ZuluSpl0it/Sia && \
+RUN go get -d -u https://github.com/zuluspl0it/sia:v1.3.4 && \
+    cd $GOPATH/src/github.com/zuluspl0it/sia && \
     make dev
 
 #RUN go get -d -u gitlab.com/NebulousLabs/Sia/... && \
